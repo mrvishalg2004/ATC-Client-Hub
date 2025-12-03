@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+import { Badge, type BadgeProps } from "@/components/ui/badge";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { MoreHorizontal, PlusCircle, Trash2, Edit } from "lucide-react";
 import { projectTypes, clientStatuses } from "@/lib/types";
@@ -98,7 +98,7 @@ export default function ClientManager({ initialClients }: { initialClients: Clie
     }
   }, [editingClient, refreshClients, toast]);
 
-  const getStatusVariant = (status: ClientStatus): "default" | "secondary" | "destructive" => {
+  const getStatusVariant = (status: ClientStatus): BadgeProps["variant"] => {
     switch (status) {
       case 'Completed': return 'default';
       case 'In Progress': return 'secondary';

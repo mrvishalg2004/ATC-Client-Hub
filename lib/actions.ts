@@ -24,8 +24,12 @@ export async function submitContactForm(
   });
 
   if (!validatedFields.success) {
+    const fieldErrors = validatedFields.error.flatten().fieldErrors;
+    const firstErrorMessage = Object.values(fieldErrors).find(
+      (errors): errors is string[] => Array.isArray(errors) && errors.length > 0
+    )?.[0];
     return {
-      message: validatedFields.error.flatten().fieldErrors[Object.keys(validatedFields.error.flatten().fieldErrors)[0]]?.[0] ?? "Invalid form data.",
+      message: firstErrorMessage ?? "Invalid form data.",
       status: "error",
     };
   }
