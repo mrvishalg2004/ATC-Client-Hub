@@ -15,9 +15,9 @@ const DEFAULT_DB_NAME = (() => {
   try {
     const parsed = new URL(uri);
     const pathname = parsed.pathname.replace("/", "").trim();
-    return pathname || "ats";
+    return pathname || "campusconnect";
   } catch {
-    return "ats";
+    return "campusconnect";
   }
 })();
 

@@ -25,7 +25,7 @@ A modern Next.js 14 application that combines a marketing landing page, a lightw
 
 - Node.js **18.17+** (Next.js 14 requirement)
 - npm **10+** (ships with Node 18)
-- A MongoDB instance (local Compass, Docker, or Atlas cluster)
+- A MongoDB Atlas cluster (or another MongoDB deployment)
 - A Resend account + API key (or update the email helper to your preferred provider)
 
 ### Installation
@@ -53,7 +53,7 @@ Visit `http://localhost:3000` for the landing page and `http://localhost:3000/da
 
 | Variable | Description |
 | --- | --- |
-| `MONGODB_URI` | Connection string pointing to your MongoDB deployment (e.g., `mongodb://localhost:27017/ats`). |
+| `MONGODB_URI` | Connection string pointing to your MongoDB deployment (e.g., `mongodb+srv://cluster.mongodb.net/campusconnect`). |
 | `MONGODB_DB_NAME` | Database name that stores the `clients` collection. |
 | `RESEND_API_KEY` | Resend secret key used to send notification emails. |
 | `NOTIFICATION_FROM_EMAIL` | Verified sender (default fallback: `ATC Client Hub <onboarding@resend.dev>`). |
@@ -87,7 +87,7 @@ Visit `http://localhost:3000` for the landing page and `http://localhost:3000/da
 
 1. Ensure MongoDB and Resend env vars are configured.
 2. Run `npm run dev` and submit the form on the landing page.
-3. Check MongoDB Compass (database `ats`, collection `clients`) to confirm the document was created.
+3. Check MongoDB Atlas (database `campusconnect`, collection `clients`) to confirm the document was created.
 4. Verify that the configured `NOTIFICATION_EMAIL` inbox received the Resend email. If not, inspect the terminal logs for `Failed to send signup notification` errors.
 
 ## Troubleshooting
