@@ -82,7 +82,7 @@ export default function ContactForm() {
             <CardHeader>
               <CardTitle className="text-3xl font-headline text-center">Sign Up Now</CardTitle>
               <CardDescription className="text-center">
-                Fill out the form below to get started with ATC Client Hub. It's free!
+                Fill out the form below to get started with ATC Client Hub. It&apos;s free!
               </CardDescription>
             </CardHeader>
             <CardContent>

@@ -33,7 +33,8 @@ export async function PUT(request: Request, { params }: { params: { id: string }
       return NextResponse.json({ error: "Client not found" }, { status: 404 });
     }
 
-    const { _id, ...client } = updated;
+    const { _id: _mongoId, ...client } = updated;
+    void _mongoId;
     return NextResponse.json({ client });
   } catch (error) {
     console.error("Failed to update client", error);

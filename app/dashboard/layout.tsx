@@ -22,9 +22,11 @@ export default function DashboardLayout({
         <SidebarContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton href="/dashboard" isActive={true} tooltip="Dashboard">
-                <Home />
-                <span>Dashboard</span>
+              <SidebarMenuButton asChild isActive tooltip="Dashboard">
+                <Link href="/dashboard">
+                  <Home />
+                  <span>Dashboard</span>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
